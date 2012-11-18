@@ -1,3 +1,15 @@
+/************************************
+ * INSERTSORT(A)
+ *   for j=2 to length[A]
+ *     do key=A[j]
+ *        j = j-1
+ *        while i>0 and A[i]>key
+ *          do A[i+1] = A[i]
+ *             i = i-1
+ *        A[i+1] = key
+ * **********************************
+ * worst-case running time: O(n^2)
+ * **********************************/
 #include <stdio.h>
 #include <stdlib.h>
 

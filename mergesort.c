@@ -1,3 +1,26 @@
+/************************************
+ * MERGESORT(A,p,r)
+ *   if p<r
+ *     then q = (p+r)/2
+ *     MERGESORT(A,p,q)
+ *     MERGESORT(A,q+1,r)
+ *     MERGE(A,p,q,r)
+ *
+ * MERGE(a,p,q,r)
+ *   j = q+1
+ *   for i=p to q
+ *     do if j < r
+ *        then if A[i] <= A[j]
+ *               B[k++] = A[i++]
+ *             else
+ *               B[k++] = A[j++]
+ *        else
+ *          B[k++] = A[i++]
+ *   while j < r
+ *     do B[k++] = A[j++]
+ * **********************************
+ * running time: O(nlgn)
+ * **********************************/
 #include <stdio.h>
 #include <stdlib.h>
 
