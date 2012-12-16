@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void selectsort(int *A, int n);
-
 int main()
 {
     int n;
@@ -27,30 +25,3 @@ int main()
     selectsort(A, n);
 }
 
-void selectsort(int A[], int n)
-{
-    int i,j,k;
-    int key,tmp;
-    for(i = n-1; i > 0; i--)
-    {
-        key = 0;
-        for(j = 0; j <= i; j++)
-        {
-            if(A[key] < A[j])
-            {
-                key = j;
-            }
-        }
-
-        tmp = A[key];
-        A[key] = A[i];
-        A[i] = tmp;
-
-        printf("%d: ", n-i);
-        for(k = 0; k < n; k++)
-        {
-            printf("%d ", A[k]);
-        }
-        printf("\n");
-    }
-}

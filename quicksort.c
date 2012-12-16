@@ -1,27 +1,5 @@
-/*****************************************
- * QUICKSORT(A,p,r)
- *   if p<r
- *     then q = PARTITION(A,p,r)
- *          QUICKSORT(A,p,q-1)
- *          QUICKSORT(A,q+1,r)
- * PARTITION(A,p,r)
- *   x=A[r]
- *   i=p-1
- *   for j=p to r-1
- *     do if A[j] <= x
- *           i = i+1
- *           exchange A[i] <-> A[j]
- *  exchange A[i+1] <-> A[r]
- *  return i+1
- * ***************************************
- * best-case  running time: O(nlgn)
- * worst-case running time: O(n^2)
- * ***************************************/
 #include <stdio.h>
 #include <stdlib.h>
-
-void quicksort(int *A, int start, int end, int num);
-int partation(int *A, int start, int end, int num);
 
 int main()
 {
@@ -45,49 +23,4 @@ int main()
     printf("\n");
 
     quicksort(A, 0, n, n);
-}
-
-void quicksort(int A[], int start, int end, int n)
-{
-    int i;
-    int part;
-
-    if(start < end)
-    {
-        part = partation(A, start, end, n);
-        quicksort(A, start, part, n);
-        quicksort(A, part+1, end, n);
-    }
-
-}
-    
-int partation(int A[], int start, int end, int n)
-{
-    int key = A[end-1];
-    int i, j = start-1;
-    int tmp;
-    static int k = 1;
-
-    for(i = start; i < end-1; i++)
-    {
-        if(A[i] <= key)
-        {
-            j++;
-            tmp = A[i];
-            A[i] = A[j];
-            A[j] = tmp;
-        }
-    }
-    tmp = A[++j];
-    A[j] = A[end-1];
-    A[end-1] = tmp;
-
-    printf("%d: ",k++);
-    for(i = 0; i < n; i++)
-    {
-        printf("%d ", A[i]);
-    }
-    printf("\n");
-    
-    return j;
 }
